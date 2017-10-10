@@ -191,3 +191,10 @@ For the fifth image, we had a beware of ice/snow sign. The model thinks there is
 
 ![alt text][image16]
 
+P.S: I got help from the forum folks through the following posts:
+
+https://discussions.udacity.com/t/testing-model-on-new-images/296850/14
+
+https://discussions.udacity.com/t/import-opencv-on-aws/387362
+
+https://discussions.udacity.com/t/plotting-training-validation-loss-using-the-lenet-training-pipeline/384844
