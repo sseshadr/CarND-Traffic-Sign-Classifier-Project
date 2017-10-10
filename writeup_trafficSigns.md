@@ -109,9 +109,13 @@ My final model based on the LeNet architecture consisted of the following layers
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used the Adam optimizer that was provided in the LeNet lab. The following were my major hyper parameters:
+
 Batch size = 128
+
 Number of Epochs = 20
+
 Learning Rate = 0.001
+
 
 I also used a dropout layer with a keep probability value set to 0.5 during training and 1.0 during validation and test.
 
