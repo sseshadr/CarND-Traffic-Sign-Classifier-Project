@@ -33,6 +33,7 @@ The goals / steps of this project are the following:
 [image16]: ./writeup_images/test5Disc.JPG "Test Image 5 Probabilities"
 [image17]: ./writeup_images/origImage.png "Original Image"
 [image18]: ./writeup_images/transImage.png "Transformed Image"
+[image19]: ./writeup_images/trainingProcess.png "Training Process"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -42,7 +43,7 @@ The goals / steps of this project are the following:
 
 ####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](fillthis.com)
+You're reading it :)! [Here](https://github.com/sseshadr/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) is the code. Note that the numbers may differ since the runs don't match exactly. But it should always pass the requirements.
 
 ###Data Set Summary & Exploration
 
@@ -50,11 +51,17 @@ You're reading it! and here is a link to my [project code](fillthis.com)
 
 I used python to calculate summary statistics of the traffic signs data set:
 
+
 Number of training examples = 34799
+
 Number of validation examples = 4410
+
 Number of testing examples = 12630
+
 Image data shape = (32, 32, 3)
+
 Image data type = <class 'numpy.float64'>
+
 Number of classes = 43
 
 ####2. Include an exploratory visualization of the dataset.
@@ -63,7 +70,7 @@ I did this a couple of ways. First was to randomly visualize an image from the t
 
 ![alt text][image1]
 
-Next, I plotted a histogram of all classes in each of the training, validation and test sets to see if the distributions are more or less the same. I read in this article that the relative ratio of the classes actually helps the network learn the probability of the sign occurring. So, all classes don’t require the same number of samples but all sets should probably require the same ratio of classes.
+Next, I plotted a histogram of all classes in each of the training, validation and test sets to see if the distributions are more or less the same. I read in [this article](https://chatbotslife.com/german-sign-classification-using-deep-learning-neural-networks-98-8-solution-d05656bf51ad) that the relative ratio of the classes actually helps the network learn the probability of the sign occurring. So, all classes don’t require the same number of samples but all sets should probably require the same ratio of classes.
 
 ![alt text][image2]
 
@@ -82,8 +89,8 @@ Next, I plotted a histogram of all classes in each of the training, validation a
 
 I decided to generate additional data because the network did not perform to our requirements on test images from the internet. So adding more data was my first step to get a ‘better’ network.
 
-To add more data to the data set, I randomly transformed the image using translation, rotation and shear factors. Additionally I also controlled the brightness by a random factor. For starters, I did this once for the already existing training simple thereby doubling the number of our training examples. My reference and code for this approach was from here.
-Although I implemented this in Traffic_Sign_Classifier-Augmented.ipynb, I ran into some size issues during training. Since this is an optional part of the project, I focused first on finishing the rest of the rubric.
+To add more data to the data set, I randomly transformed the image using translation, rotation and shear factors. Additionally I also controlled the brightness by a random factor. For starters, I did this once for the already existing training simple thereby doubling the number of our training examples. [Here](https://medium.com/@vivek.yadav/dealing-with-unbalanced-data-generating-additional-data-by-jittering-the-original-image-7497fe2119c3) is my reference and [here](https://github.com/vxy10/ImageAugmentation) is the code for this approach.
+Although I implemented this in [Traffic_Sign_Classifier-Augmented.ipynb](https://github.com/sseshadr/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier-Augmented.ipynb), I ran into some size issues during training. Since this is an optional part of the project, I focused first on finishing the rest of the rubric. I will probably come back to this after I pass my project.
 
 Here is an example of an original image and an augmented image:
 
@@ -116,9 +123,10 @@ My final model results were:
 * test set accuracy of 0.931
 
 * What was the first architecture that was tried and why was it chosen?
-The LeNet architecture was suggested as a good starting point so that is what I chose. Since this model has already proved to be good at deciphering numbers and we know that traffic signs might contain numbers too, it is a good starting point. From there, we need to do empirical tests to see if it can recognize non-numeric signs just as well. This reference paper was also useful.
+The LeNet architecture was suggested as a good starting point so that is what I chose. Since this model has already proved to be good at deciphering numbers and we know that traffic signs might contain numbers too, it is a good starting point. From there, we need to do empirical tests to see if it can recognize non-numeric signs just as well. [This reference paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) was also useful.
 * What were some problems with the initial architecture?
 A good way to check if an architecture will work at all for the application is to train it so much that it actually overfits the training data. Once we get there, we can apply some deep learning techniques such as dropouts and regularizations to generalize the network and address the overfitting. So this is a problem we are intentionally working towards. With the initial architecture, we achieved overfitting. Training accuracy was ~0.95 and the validation accuracy was ~0.85. Here is when I decided to raise the epochs to see if the trends continue. I also added a couple of visualizations to plot the loss and the accuracy curve to see the trend better. We would see training always reach a really good accuracy. But validation loss will be moving around a whole lot instead of settling down.
+![alt text][image19]
 * How was the architecture adjusted and why was it adjusted? 
 To address the overfitting, I added a drop out layer. This makes the network question the input data and not be over reliant on a particular input to be available to make a decision. We can set this probability of an input being available. A good choice is to use 0.5 during the training process. But in validation and test we set this to 1.0 since dropout is supposed to do its blind folding act only during training. During normal operation, we can think of it as a see through layer.
 * Which parameters were tuned? How were they adjusted and why?
