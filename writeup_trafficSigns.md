@@ -19,20 +19,20 @@ The goals / steps of this project are the following:
 [image2]: ./writeup_images/trainingClassDist.png "Training Class Distribution"
 [image3]: ./writeup_images/validationClassDist.png "Validation Class Distribution"
 [image4]: ./writeup_images/testClassDist.png "Test Class Distribution"
-[image5]: ./writeup_images/architecture.jpg "Model Architecture"
+[image5]: ./writeup_images/architecture.JPG "Model Architecture"
 [image6]: ./test_images/original/test1.jpg "Traffic Sign 1"
 [image7]: ./test_images/original/test2.jpg "Traffic Sign 2"
 [image8]: ./test_images/original/test3.jpg "Traffic Sign 3"
 [image9]: ./test_images/original/test4.jpg "Traffic Sign 4"
 [image10]: ./test_images/original/test5.jpg "Traffic Sign 5"
-[image11]: ./writeup_images/testDiscussion.jpg "Test Images Prediction"
-[image12]: ./writeup_images/test1Disc.jpg "Test Image 1 Probabilities"
-[image13]: ./writeup_images/test2Disc.jpg "Test Image 2 Probabilities"
-[image14]: ./writeup_images/test3Disc.jpg "Test Image 3 Probabilities"
-[image15]: ./writeup_images/test4Disc.jpg "Test Image 4 Probabilities"
-[image16]: ./writeup_images/test5Disc.jpg "Test Image 5 Probabilities"
-[image17]: ./writeup_images/origImage.jpg "Original Image"
-[image18]: ./writeup_images/transImage.jpg "Transformed Image"
+[image11]: ./writeup_images/testDiscussion.JPG "Test Images Prediction"
+[image12]: ./writeup_images/test1Disc.JPG "Test Image 1 Probabilities"
+[image13]: ./writeup_images/test2Disc.JPG "Test Image 2 Probabilities"
+[image14]: ./writeup_images/test3Disc.JPG "Test Image 3 Probabilities"
+[image15]: ./writeup_images/test4Disc.JPG "Test Image 4 Probabilities"
+[image16]: ./writeup_images/test5Disc.JPG "Test Image 5 Probabilities"
+[image17]: ./writeup_images/origImage.png "Original Image"
+[image18]: ./writeup_images/transImage.png "Transformed Image"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -152,6 +152,7 @@ The code for making predictions on my final model is located in the final cell o
 
 For the first image, the model is relatively sure that this is a roundabout mandatory sign and the image does contain this sign. Other max probabilities were also related to arrow heads which means the network is doing a good job of identifying arrows.
 
+
 ![alt text][image12]
 
 
@@ -160,6 +161,7 @@ For the second image, we had a wild animals crossing sign. The model is relative
 
 ![alt text][image13]
 
+
 For the third image, we had a bicycle crossing sign. None of the top 5 probabilities show this. It will be interesting to see if the ‘blue’ nature of the sign has any effect on the different layers. 
 
 
@@ -167,6 +169,8 @@ For the third image, we had a bicycle crossing sign. None of the top 5 probabili
 
 
 For the fourth image, we had a slippery road sign. The model is relatively sure about this sign. It is interesting to see that wild animals sign has the second highest probability. If we go back to the results for the second image, we see slippery road as the third highest. Something about these two images, the network seems to find similar features.
+
+
 ![alt text][image15]
 
 
