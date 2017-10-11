@@ -162,13 +162,13 @@ The model was able to correctly guess 3 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the final cell of the Ipython notebook Traffic_Sign_Classifier.ipynb.
 
-For the first image, the model is relatively sure that this is a roundabout mandatory sign and the image does contain this sign. Other max probabilities were also related to arrow heads which means the network is doing a good job of identifying arrows.
+For the first image, the model is pretty sure that this is a roundabout mandatory sign and the image does contain this sign. Other max probabilities were also related to arrow heads which means the network is doing a good job of identifying arrows.
 
 
 ![alt text][image12]
 
 
-For the second image, we had a wild animals crossing sign. The model is relatively sure about this sign as well. Other probabilities consisted of ‘curves’.
+For the second image, we had a wild animals crossing sign. The model is pretty sure about this sign as well. Other probabilities consisted of ‘curves’.
 
 
 ![alt text][image13]
@@ -180,7 +180,7 @@ For the third image, we had a bicycle crossing sign. None of the top 5 probabili
 ![alt text][image14]
 
 
-For the fourth image, we had a slippery road sign. The model is relatively sure about this sign. It is interesting to see that wild animals sign has the second highest probability. If we go back to the results for the second image, we see slippery road as the third highest. Something about these two images, the network seems to find similar features.
+For the fourth image, we had a slippery road sign. The model is pretty sure about this sign. It is interesting to see that wild animals sign is among the top 5. If we go back to the results for the second image, we see slippery road is also among the top 5 there. Something about these two images, the network seems to find similar features.
 
 
 ![alt text][image15]
